@@ -4,6 +4,12 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: ai-chat
+    restart: unless-stopped
     ports:
       - '5004:3000'
-    restart: unless-stopped
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    external: true
