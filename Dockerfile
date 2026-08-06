@@ -23,6 +23,4 @@ COPY --from=builder /usr/src/app/package-lock.json .
 
 RUN npm ci --production
 
-EXPOSE 3000
-
 CMD ["node", "build"]
